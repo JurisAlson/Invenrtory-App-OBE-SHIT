@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_main">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+                
+        android:layout_marginLeft="50px"
+        android:layout_marginTop="30px"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:text="Items" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView1"
+        android:layout_width="match_parent"
+        android:layout_height="100px"
+        android:background="@drawable/rounded_edit_text"
+        android:layout_marginTop="20px"
+        android:layout_marginHorizontal="20px"
+        android:queryHint="Search" />
+
+    <TextView
+        android:text="Empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        
+        android:id="@+id/txtUser" />
+
+    <TextView
+        android:text="Empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        
+        android:id="@+id/txtPass" />
+   
+</LinearLayout>
