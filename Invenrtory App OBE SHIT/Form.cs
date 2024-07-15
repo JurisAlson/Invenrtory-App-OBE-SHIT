@@ -1,44 +1,53 @@
-﻿using System;
-using System.IO;
-using System.Net;
-using Android.App;
+﻿using Android.App;
 using Android.OS;
 using Android.Widget;
 using AndroidX.AppCompat.App;
-using static Android.Provider.UserDictionary;
+using Invenrtory_App_OBE_SHIT;
+using System;
 
-namespace Invenrtory_App_OBE_SHIT
+namespace Inventory_App_OBE_SHIT
 {
     [Activity(Label = "Inventory Form")]
     public class Form : AppCompatActivity
     {
         private EditText Item, itemQuantity, Description;
         private Button buttonSubmit;
+        private TextView txtItemName, txtQuantity, txtDescription;
 
-        HttpWebResponse response;
-        HttpWebRequest request;
-
-        string item = "", quantity = "", description = "", res = "";
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.Form_main);
 
-            // Bind the widgets
+            // Bind the EditText and Button widgets
             Item = FindViewById<EditText>(Resource.Id.Item);
             itemQuantity = FindViewById<EditText>(Resource.Id.itemQuantity);
             Description = FindViewById<EditText>(Resource.Id.Description);
             buttonSubmit = FindViewById<Button>(Resource.Id.buttonSubmit);
 
-            buttonSubmit.Click += SubmitClick;
+            // Check if buttonSubmit is not null before assigning the Click event
+            if (buttonSubmit != null)
+            {
+                buttonSubmit.Click += SubmitClick;
+            }
+            else
+            {
+                // Log or handle the error appropriately
+                Toast.MakeText(this, "Button not found in layout", ToastLength.Short).Show();
+            }
+
+            // Bind the TextViews
+            txtItemName = FindViewById<TextView>(Resource.Id.txtItemName);
+            txtQuantity = FindViewById<TextView>(Resource.Id.txtQuantity);
+            txtDescription = FindViewById<TextView>(Resource.Id.txtDescription);
         }
 
         public void SubmitClick(object sender, EventArgs e)
         {
-            item = Item.Text;
-            quantity = itemQuantity.Text;
-            description = Description.Text;
+            string item = Item.Text;
+            string quantity = itemQuantity.Text;
+            string description = Description.Text;
 
             // Validate the input data
             if (string.IsNullOrWhiteSpace(item) || string.IsNullOrWhiteSpace(quantity) || string.IsNullOrWhiteSpace(description))
@@ -47,26 +56,23 @@ namespace Invenrtory_App_OBE_SHIT
                 return;
             }
 
-            if (!int.TryParse(quantity, out int quantityValue))
+            if (!int.TryParse(quantity, out _))
             {
                 Toast.MakeText(this, "Invalid quantity. Please enter a valid number.", ToastLength.Short).Show();
                 return;
             }
 
-            try
-            {
-                request = (HttpWebRequest)WebRequest.Create("http://192.168.1.2/INVENTORY/REST/add_record.php?item=" + item + "&quantity=" + quantity + "&description=" + description);
-                response = (HttpWebResponse)request.GetResponse();
-                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-                {
-                    res = reader.ReadToEnd();
-                }
-                Toast.MakeText(this, "Item added successfully!", ToastLength.Short).Show();
-            }
-            catch (Exception ex)
-            {
-                Toast.MakeText(this, "Error occurred: " + ex.Message, ToastLength.Short).Show();
-            }
+            // Display the submitted data
+            txtItemName.Text = $"Item Name: {item}";
+            txtQuantity.Text = $"Price: {quantity}";
+            txtDescription.Text = $"Description: {description}";
+
+            // Optionally clear the EditText fields after submission
+            Item.Text = "";
+            itemQuantity.Text = "";
+            Description.Text = "";
+
+            Toast.MakeText(this, "Form submitted successfully!", ToastLength.Short).Show();
         }
     }
 }

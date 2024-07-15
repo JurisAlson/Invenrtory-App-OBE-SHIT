@@ -4215,61 +4215,64 @@ namespace Invenrtory_App_OBE_SHIT
 			public const int txtConfirmPassword = 2131230973;
 			
 			// aapt resource value: 0x7F0800FE
-			public const int txtGender = 2131230974;
+			public const int txtDescription = 2131230974;
 			
 			// aapt resource value: 0x7F0800FF
-			public const int txtIntro = 2131230975;
+			public const int txtGender = 2131230975;
 			
 			// aapt resource value: 0x7F080100
-			public const int txtName = 2131230976;
+			public const int txtIntro = 2131230976;
 			
 			// aapt resource value: 0x7F080101
-			public const int txtPass = 2131230977;
+			public const int txtItemName = 2131230977;
 			
 			// aapt resource value: 0x7F080102
-			public const int txtPassword = 2131230978;
+			public const int txtName = 2131230978;
 			
 			// aapt resource value: 0x7F080103
-			public const int txtUser = 2131230979;
+			public const int txtPassword = 2131230979;
 			
 			// aapt resource value: 0x7F080104
-			public const int txtUsername = 2131230980;
+			public const int txtQuantity = 2131230980;
 			
 			// aapt resource value: 0x7F080105
-			public const int txtWelcome = 2131230981;
+			public const int txtUsername = 2131230981;
 			
 			// aapt resource value: 0x7F080106
-			public const int @unchecked = 2131230982;
+			public const int txtWelcome = 2131230982;
 			
 			// aapt resource value: 0x7F080107
-			public const int uniform = 2131230983;
+			public const int @unchecked = 2131230983;
 			
 			// aapt resource value: 0x7F080108
-			public const int unlabeled = 2131230984;
+			public const int uniform = 2131230984;
 			
 			// aapt resource value: 0x7F080109
-			public const int up = 2131230985;
+			public const int unlabeled = 2131230985;
 			
 			// aapt resource value: 0x7F08010A
-			public const int useLogo = 2131230986;
+			public const int up = 2131230986;
 			
 			// aapt resource value: 0x7F08010B
-			public const int view_offset_helper = 2131230987;
+			public const int useLogo = 2131230987;
 			
 			// aapt resource value: 0x7F08010C
-			public const int view_tree_saved_state_registry_owner = 2131230988;
+			public const int view_offset_helper = 2131230988;
 			
 			// aapt resource value: 0x7F08010D
-			public const int visible = 2131230989;
+			public const int view_tree_saved_state_registry_owner = 2131230989;
 			
 			// aapt resource value: 0x7F08010E
-			public const int visible_removing_fragment_view_tag = 2131230990;
+			public const int visible = 2131230990;
 			
 			// aapt resource value: 0x7F08010F
-			public const int withText = 2131230991;
+			public const int visible_removing_fragment_view_tag = 2131230991;
 			
 			// aapt resource value: 0x7F080110
-			public const int wrap_content = 2131230992;
+			public const int withText = 2131230992;
+			
+			// aapt resource value: 0x7F080111
+			public const int wrap_content = 2131230993;
 			
 			static Id()
 			{
