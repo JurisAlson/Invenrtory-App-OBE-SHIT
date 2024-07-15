@@ -23,8 +23,6 @@ namespace Invenrtory_App_OBE_SHIT
         HttpWebRequest request;
         string res = "", str = "", uname = "", pword = "";
 
-
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -61,7 +59,7 @@ namespace Invenrtory_App_OBE_SHIT
 
             try
             {
-                request = (HttpWebRequest)WebRequest.Create("http://192.168.18.11/INVENTORY/REST/admin_loginMP.php?uname=" + uname + "&pword=" + pword);
+                request = (HttpWebRequest)WebRequest.Create("http://192.168.1.2/INVENTORY/REST/admin_loginMP.php?uname=" + uname + "&pword=" + pword);
                 response = (HttpWebResponse)request.GetResponse();
                 using (StreamReader reader = new StreamReader(response.GetResponseStream()))
                 {

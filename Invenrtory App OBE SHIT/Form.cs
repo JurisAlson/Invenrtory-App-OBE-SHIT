@@ -53,10 +53,9 @@ namespace Invenrtory_App_OBE_SHIT
                 return;
             }
 
-            // Send the data to the server
             try
             {
-                request = (HttpWebRequest)WebRequest.Create("http://192.168.18.11/INVENTORY/REST/add_form.php?item=" + item + "&quantity=" + quantity + "&description=" + description);
+                request = (HttpWebRequest)WebRequest.Create("http://192.168.1.2/INVENTORY/REST/add_record.php?item=" + item + "&quantity=" + quantity + "&description=" + description);
                 response = (HttpWebResponse)request.GetResponse();
                 using (StreamReader reader = new StreamReader(response.GetResponseStream()))
                 {
